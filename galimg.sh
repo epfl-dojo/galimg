@@ -19,9 +19,20 @@ copy_originals() {
 }
 
 make_index() {
-  (cd $src; ls -1) | perl -ne 'chomp; print qq(<a href="original/$_"><img src="thumbnails/$_"></a>)' > $dest/index.html
+  (
+## http://www.htmlgoodies.com/html5/css/how-to-create-a-css3-based-image-gallery.html
+    echo "<html>"
+    echo "<head><link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"></style></head><body>"
+    (cd $src; ls -1) | perl -ne 'chomp; print qq(<a href="original/$_"><img src="thumbnails/$_">$_</a><span>$_</span>\n)'
+    echo "</body></html>"
+   ) > $dest/index.html
+}
+
+make_css() {
+  :
 }
 
 # mkthumbnails
 # copy_originals
 make_index
+make_css
