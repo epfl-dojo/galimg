@@ -1,0 +1,126 @@
+html, body{
+margin:0;
+padding:0;
+height:100%;
+background:url(images/fon.png);
+}
+
+.blog{
+position:absolute;
+top:5px;
+left:5px;
+width:150px;
+height:16px;
+font-family: "Trebuchet MS";
+font-size:14px;
+color:#333;
+display:inline-block;
+border:none;
+overflow:hidden;
+}
+
+.gallery{
+margin:0 auto;
+width:800px;
+height:640px;
+background:#333;
+box-shadow:0px 0px 15px 1px #333;
+-webkit-box-shadow:0px 0px 15px 1px #333;
+-moz-box-shadow:0px 0px 15px 1px #333;
+position:relative;
+}
+
+
+a{
+float:left;
+width:25%;
+height:25%;
+position:relative;
+border:1px solid #333;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+}
+
+a img{
+display:block;
+width:100%;
+height:100%;
+-webkit-transition-property:width, height;
+-webkit-transition-duration:300ms;
+-moz-transition-property:width, height;
+-moz-transition-duration:300ms;
+-o-transition-property:width, height;
+-o-transition-duration:300ms;
+position:absolute;
+z-index:1;
+opacity:0.3;
+cursor:pointer;
+}
+
+span {
+display:block;
+position:absolute;
+width:100%;
+height:100%;
+/*content:"Dojo Powered";*/
+color:#000;
+font-family: "Trebuchet MS";
+font-size:16px;
+opacity:0.5;
+}
+
+.closed{
+position:absolute;
+top:10px;
+right:-50px;
+display:none;
+text-align:center;
+font-weight:bold;
+font-size:70px;
+color:#fff;
+width:20px;
+height:20px;
+-webkit-text-shadow:0px 0px 5px #222;
+-moz-text-shadow:0px 0px 5px #222;
+text-shadow:0px 0px 5px #222;
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+-webkit-transform:rotate(45deg);
+cursor:pointer;
+z-index:3;
+}
+
+a:hover~.closed{
+display:block;
+}
+
+
+a:hover img{
+width:250%;
+height:250%;
+position:absolute;
+opacity:1;
+z-index:2;
+box-shadow:0 0 15px 2px #000;
+-moz-box-shadow:0 0 15px 2px #000;
+-webkit-box-shadow:0 0 15px 2px #000;
+-webkit-transition-property:width, height;
+-webkit-transition-duration:2s;
+-webkit-transition-delay:0.3s;
+-moz-transition-property:width, height;
+-moz-transition-duration:2s;
+-moz-transition-delay:0.3s;
+-o-transition-property:width, height;
+-o-transition-duration:2s;
+-o-transition-delay:0.3s;
+cursor:default;
+}
+
+a:nth-child(4n+4) img, a:nth-child(4n+3) img{
+right:0;
+}
+
+a:nth-child(n+9) img{
+bottom:0;
+}
